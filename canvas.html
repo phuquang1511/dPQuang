@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      window.onload = function () {
+        // HÌNH CHỮ NHẬT
+        var canvasrect = document.getElementById("mycanvasrectcontent");
+        var context = canvasRect.getContext("2d");
+        context.beginPath(); // dùng để bắt đầu nét vẽ hoặc thiết lập nét vẽ hiện tại
+        context.rect(18, 50, 200, 100); // dùng để vẽ hình chữ nhật với toạ độ tuỳ chỉnh
+        context.Fillstyle = "darkblue"; // dùng để thiết lập hoặc trả về màu, dải màu hoặc hoạ tiết
+        context.fill;
+
+        context.beginPath();
+        context.Fillstyle = "blue";
+        context.fillRect(18, 160, 200, 100);
+
+        context.beginPath();
+        context.strokeStyle = "red";
+        context.strokeRect(240, 50, 150, 100);
+        context.stroke();
+
+        //LINE
+        var canvasLine = document.getElementById("myCanvasLine");
+        var contextLine = canvasLine.getContext("2d");
+        contextLine.beginPath(); // dùng để bắt đầu nét vẽ hoặc thiết lập lại nét vẽ hiện tại
+        contextLine.lineWidth = "5";
+        contextLine.strokeStyle = "green"; // dùng để thiệt lập hoặc trả về màu sắc, dải màu hoặc mẫu hoạ tiết
+        contextLine.moveTo(0, 75); // toạ độ điểm đầu
+        contextLine.lineTo(250, 75); // toạ độ điểm cuối
+        contextLine.stroke(); // Draw it
+
+        contextLine.beginPath();
+        contextLine.strokeStyle = "purple"; // nét tím
+        contextLine.moveTo(50, 0);
+        contextLine.lineTo(150, 130);
+        contextLine.stroke(); // Hiển thị
+
+        //arc
+        var canvasArc = document.getElementById("myCanvasArc");
+        var contextArc = canvasArc.getContext("2d");
+        contextArc.beginPath();
+        contextArc.lineWidth = 10;
+        contextArc.strokeStyle = "orange";
+        contextArc.arc(100, 75, 1.1 * Math.PI, 1.9 * Math.PI, false);
+        contextArc.stroke();
+
+        contextArc.beginPath();
+        contextArc.Fillstyle = "red";
+        contextArc.lineWidth = 5;
+        contextArc.strokeStyle = "black";
+        contextArc.arc(200, 200, 50, 0, 2 * Math.PI);
+        contextArc.fill();
+        contextArc.stroke();
+
+        //bezierCurveTO() vẽ đường cong bậc 3 (4 điểm)
+        var canvasBezier = document.getElementById("myCanvasBezier");
+        var contexBezier = canvasBezier.getContext("2d");
+        contextBezier.beginPath();
+        contextBezier.lineWidth = 15;
+        contextBezier.moveTo(50, 50);
+        contextBezier.bezierCurveTo(140, 10, 388, 10, 288, 100);
+        contextBezier.strokeStyle = "gray";
+        contextBezier.stroke();
+
+        //quadratiCurveTo() vẽ đường cong bậc 2 (3 điểm)
+        var canvasQuadratic = document.getElementById("myCanvasQuadratic");
+        var contexQuadratic = canvasQuadratic.getContext("2d");
+        contextQuadratic.beginPath();
+        contextQuadratic.lineWidth = 10;
+        contextQuadratic.moveTo(100, 100);
+        contextQuadratic.quadraticCurveTo(400, 200, 300, 400);
+        contextQuadratic.strokeStyle = "red";
+        contextQuadratic.stroke();
+
+        //IMAGE
+        var canvasImg = document.getElementById("myCanvasImage");
+        var contextImage = canvasImg.getContext("2d");
+        var objImg = new Image();
+        objImg.onload = function () {
+          contextImage.drawImage(objImg, 10, 10, 300, 200);
+        };
+        objImg.src = "";
+
+        //TEXT
+        var canvasText = document.getElementById("myCanvasText");
+        var contextText = canvasText.getContext("2d");
+        contextText.beginPath();
+        contextText.font = "italic 30pt Calibri";
+        contextText.Fillstyle = "red";
+        contextText.fillText("HELLO", 10, 50);
+
+        contextText.beginPath();
+        contextText.font = "50px serif";
+        contextText.strokeStyle = "green";
+        // contextText.globalAlpha = 0.2; // Thuộc tính làm mờ tương phản effect
+        contextText.strokeText("MY NAME IS", 50, 200);
+      };
+    </script>
+  </body>
+</html>

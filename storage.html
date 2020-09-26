@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      // SessionStorage
+      function addSession() {
+        var valueSession = document.getElementById("valueSession").value;
+        sessionStorage.setItem("DemoSession", valueSession);
+      }
+
+      function getSession() {
+        alert(sessionStorage.getItem("DemoSession"));
+      }
+
+      function deleteSession() {
+        sessionStorage.removeItem("DemoSession");
+        //removeAll
+        //seesionStorage.clear()
+      }
+
+      // LocalStorage
+      function addLocal() {
+        var valueSession = document.getElementById("valueLocal").value;
+        sessionStorage.setItem("DemoLocal", valueLocal);
+      }
+
+      function getLocal() {
+        alert(sessionStorage.getItem("DemoLocal"));
+      }
+
+      function deleteLocal() {
+        sessionStorage.removeItem("DemoLocal");
+        //removeAll
+        //localStorage.clear()
+      }
+    </script>
+  </head>
+  <body>
+    <div style="text-align: center;">
+      <h1>STORAGE</h1>
+    </div>
+    <div>
+      <div
+        style="
+          float: left;
+          border: solid 1px red;
+          padding: 10px;
+          width: 40%;
+          height: 500px;
+        "
+      >
+        <h3>SESSION STORAGE</h3>
+        <input type="text" id="valueSession;" />
+        <button onclick="addSession()">ADD</button>
+        <button onclick="getSession()">GET</button>
+        <button onclick="deleteSession()">DELETE</button>
+      </div>
+
+      <div
+        style="
+          float: left;
+          border: solid 1px red;
+          padding: 10px;
+          width: 40%;
+          height: 500px;
+        "
+      >
+        <h3>LOCAL STORAGE</h3>
+        <input type="text" id="valueLocal;" />
+        <button onclick="addLocal()">ADD</button>
+        <button onclick="getLocal()">GET</button>
+        <button onclick="deleteLocal()">DELETE</button>
+      </div>
+    </div>
+  </body>
+</html>
